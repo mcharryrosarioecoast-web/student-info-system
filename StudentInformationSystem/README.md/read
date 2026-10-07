@@ -1,0 +1,54 @@
+# Student Information System
+
+A web-based Student Information System developed using Python Flask.
+
+## Project Description
+
+The Student Information System is designed to help manage student records through a simple and organized web interface.
+
+The system allows users to add, view, search, update, and delete student information.
+
+Student records are stored using JSON format.
+
+## Features
+
+- Add new students
+- View student records
+- Search student records
+- Update student information
+- Delete student records
+- JSON data storage
+- Configuration management
+- Error handling
+- Logging system
+- Modular project structure
+- Responsive web interface
+
+## Technologies Used
+
+- Python
+- Flask
+- HTML
+- CSS
+- JSON
+- Git
+- GitHub
+
+## Project Structure
+
+```text
+StudentInformationSystem/
+│
+├── app.py
+├── config.py
+├── requirements.txt
+├── README.md
+├── .gitignore
+│
+├── data/
+├── logs/
+├── models/
+├── services/
+├── utils/
+├── templates/
+└── static/

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        {% block title %}
+        Student Information System
+        {% endblock %}
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+</head>
+
+<body>
+
+    <div class="layout">
+
+        <aside class="sidebar">
+
+            <div class="brand">
+
+                <div class="brand-title">
+                    Student Information
+                </div>
+
+                <div class="brand-subtitle">
+                    Management System
+                </div>
+
+            </div>
+
+            <nav class="navigation">
+
+                <a
+                    href="{{ url_for('dashboard') }}"
+                    class="nav-link"
+                >
+                    Dashboard
+                </a>
+
+                <a
+                    href="{{ url_for('dashboard') }}"
+                    class="nav-link"
+                >
+                    Student Records
+                </a>
+
+                <a
+                    href="{{ url_for('add_student') }}"
+                    class="nav-link"
+                >
+                    Add Student
+                </a>
+
+            </nav>
+
+            <div class="sidebar-footer">
+
+                <p>College Student Portal</p>
+                <span>Student Management System</span>
+
+            </div>
+
+        </aside>
+
+
+        <main class="main-content">
+
+            <header class="topbar">
+
+                <div>
+
+                    <h1>
+                        {% block page_title %}
+                        Student Information System
+                        {% endblock %}
+                    </h1>
+
+                    <p>
+                        Manage student information and records
+                    </p>
+
+                </div>
+
+            </header>
+
+
+            <section class="content">
+
+                {% with messages = get_flashed_messages(
+                    with_categories=true
+                ) %}
+
+                    {% if messages %}
+
+                        {% for category, message in messages %}
+
+                            <div class="alert {{ category }}">
+                                {{ message }}
+                            </div>
+
+                        {% endfor %}
+
+                    {% endif %}
+
+                {% endwith %}
+
+
+                {% if error_message %}
+
+                    <div class="alert danger">
+                        {{ error_message }}
+                    </div>
+
+                {% endif %}
+
+
+                {% block content %}
+
+                {% endblock %}
+
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>
